@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Um convite ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;overflow:hidden;background:linear-gradient(135deg,#ffe4ec,#ffc2d1);font-family:Arial,sans-serif;text-align:center;color:#842044}
+.cartao{width:min(100%,440px);padding:40px 24px;border-radius:24px;background:white;box-shadow:0 15px 40px #84204422}
+.coracao{font-size:60px}h1{font-size:30px;margin:20px 0 30px}.botoes{display:flex;justify-content:center;gap:16px;min-height:50px}
+button{padding:14px 28px;border:0;border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer;touch-action:manipulation}
+#sim{background:#e63970;color:white}#sim:hover{background:#c7285a}#nao{background:#eee;color:#555;z-index:10}#mensagem{font-size:24px;line-height:1.5}[hidden]{display:none!important}
+</style>
+</head>
+<body><main class="cartao"><div class="coracao">❤️</div><div id="convite"><h1>Quer sair comigo?</h1><div class="botoes"><button id="sim" type="button">Sim 💖</button><button id="nao" type="button">Não 🙈</button></div></div><p id="mensagem" role="status" hidden>Ótimo! Passo aí pra te pegar às 20:00 😍</p></main>
+<script>
+const sim=document.getElementById("sim"),nao=document.getElementById("nao"),convite=document.getElementById("convite"),mensagem=document.getElementById("mensagem");
+function fugir(evento){if(evento)evento.preventDefault();const margem=16,limiteX=Math.max(0,window.innerWidth-nao.offsetWidth-margem*2),limiteY=Math.max(0,window.innerHeight-nao.offsetHeight-margem*2);nao.style.position="fixed";nao.style.left=`${margem+Math.random()*limiteX}px`;nao.style.top=`${margem+Math.random()*limiteY}px`}
+nao.addEventListener("pointerenter",fugir);nao.addEventListener("pointerdown",fugir);nao.addEventListener("click",fugir);
+sim.addEventListener("click",()=>{convite.hidden=true;mensagem.hidden=false});
+window.addEventListener("resize",()=>{if(nao.style.position==="fixed")fugir()});
+</script></body></html>

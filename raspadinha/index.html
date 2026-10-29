@@ -14,7 +14,7 @@ h1{font-size:clamp(26px,7vw,34px);margin:12px 0}
 p{line-height:1.75;font-size:16px}
 button{border:0;border-radius:999px;background:#d93978;color:white;font-size:17px;font-weight:700;padding:16px 26px;margin:20px auto 0;cursor:pointer;box-shadow:0 8px 20px #d9397844}
 button:focus-visible{outline:3px solid #87294f;outline-offset:4px}
-#mensagem{margin-top:22px;padding:22px 18px;background:#fff0f6;border:1px solid #ffc4dc;border-radius:22px;animation:reveal .7s ease both}
+#mensagem{margin-top:12px;padding:22px 18px;background:#fff0f6;border:1px solid #ffc4dc;border-radius:22px;animation:reveal .7s ease both}
 #mensagem h2{font-size:23px;line-height:1.35;margin:0 0 18px}
 #mensagem p{margin:12px 0}
 .final{font-weight:700;color:#bc2d70}
@@ -26,22 +26,13 @@ button:focus-visible{outline:3px solid #87294f;outline-offset:4px}
 <body>
 <main class="card">
 <div class="heart" aria-hidden="true">💌</div>
-<h1>Tenho algo pra te dizer...</h1>
-<p>Preparei uma mensagem especial pra você. ❤️</p>
-<button id="ver" type="button" aria-expanded="false" aria-controls="mensagem">💖 Ver mensagem</button>
-<section id="mensagem" aria-live="polite" hidden>
+<section id="mensagem" aria-label="Mensagem especial">
 <h2>Uma coisa que eu quero que você saiba ❤️</h2>
 <p>Independentemente do que acontecer, quero que você saiba que estarei com você. Nos dias bons, para comemorar cada sorriso, e nos dias difíceis, para te apoiar e segurar sua mão.</p>
 <p>Não posso prometer que tudo será perfeito, mas posso prometer carinho, respeito e a vontade de estar ao seu lado.</p>
 <p class="final">Você é muito especial pra mim. ❤️</p>
 </section>
 </main>
-<script>
-document.getElementById("ver").addEventListener("click",function(){
-document.getElementById("mensagem").hidden=false;
-this.setAttribute("aria-expanded","true");
-this.hidden=true;
-});
-</script>
+
 </body>
 </html>
